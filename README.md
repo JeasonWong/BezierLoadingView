@@ -12,8 +12,8 @@ A cool loading view with Bezier and a smooth circular motion，
 
 |name|format|description|
 |:---:|:---:|:---:|
-| lv_external_radius | dimension |set external circle eadius
-| lv_internal_radius | dimension |set internal circle eadius
+| lv_external_radius | dimension |set external circle radius
+| lv_internal_radius | dimension |set internal circle radius
 | lv_duration | integer |set animation duration
 | lv_start_color | color |set start color
 | lv_end_color | color |set end color
