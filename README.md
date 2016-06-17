@@ -1,6 +1,8 @@
 ## What's BezierLoadingView ?
 A cool loading view with Bezier and a smooth circular motion， 
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BezierLoadingView-green.svg?style=true)](https://android-arsenal.com/details/1/3736)
+
 ## Demo
 ![效果](http://i4.buimg.com/cdd5a4a8f0233650.gif)
 
@@ -34,7 +36,7 @@ Step 2. Add the dependency:
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:LoadingiVew:1.0.2'
+  compile 'me.wangyuwei:LoadingiVew:1.0.3'
 }
 ```
 
