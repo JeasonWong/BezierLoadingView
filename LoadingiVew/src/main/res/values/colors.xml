@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="loading_yellow">#F6B965</color>
+    <color name="loading_pink">#F04D61</color>
+
+</resources>

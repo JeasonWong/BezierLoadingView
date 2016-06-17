@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <me.wangyuwei.loadingview.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"/>
+
+    <!--<me.wangyuwei.loadingview.LoadingView-->
+        <!--android:id="@+id/loading_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="350dp"-->
+        <!--lv:lv_duration="10"-->
+        <!--lv:lv_start_color="#688fdb"-->
+        <!--lv:lv_end_color="#fff"-->
+        <!--lv:lv_internal_radius="5dp"-->
+        <!--lv:lv_external_radius="92dp"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="ExternalR"
+            android:textColor="@color/loading_yellow" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/sb_external_r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:progressTint="@color/loading_pink"
+            android:thumbTint="@color/loading_pink" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="InternalR"
+            android:textColor="@color/loading_yellow" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/sb_internal_r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:progressTint="@color/loading_pink"
+            android:thumbTint="@color/loading_pink" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Rapid"
+            android:textColor="@color/loading_yellow" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/sb_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="90"
+            android:progressTint="@color/loading_pink"
+            android:thumbTint="@color/loading_pink" />
+
+    </LinearLayout>
+
+</LinearLayout>

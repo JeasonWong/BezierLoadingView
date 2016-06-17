@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BezierLoadingView">
+        <attr name="lv_external_radius" format="dimension"></attr>
+        <attr name="lv_internal_radius" format="dimension"></attr>
+        <attr name="lv_duration" format="integer"></attr>
+        <attr name="lv_start_color" format="color"></attr>
+        <attr name="lv_end_color" format="color"></attr>
+    </declare-styleable>
+
+</resources>
