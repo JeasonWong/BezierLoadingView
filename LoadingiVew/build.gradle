@@ -1,11 +1,16 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'me.wangyuwei' // Change this to match your package name
+version = '1.0.2' // Change this to match your version number
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -23,4 +28,52 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'io.reactivex:rxandroid:1.2.0'
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+artifacts {
+//    archives generateJavaDocsJar
+    archives generateSourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.key")
+    pkg {
+        repo = 'maven'
+        name = 'BezierLoadingView'
+        desc = "A cool loading view with Bezier and a smooth circular motion， "
+
+        version {
+            name = '1.0.2'
+            desc = 'A cool loading view with Bezier and a smooth circular motion， '
+            vcsTag = 'android, loadfing, view'
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/JeasonWong/BezierLoadingView.git'
+        websiteUrl = 'https://github.com/JeasonWong/BezierLoadingView'
+
+        labels = ['android']
+        publish = true
+        publicDownloadNumbers = true
+    }
+    configurations = ['archives']
 }

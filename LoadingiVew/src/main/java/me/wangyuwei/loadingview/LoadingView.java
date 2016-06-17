@@ -134,10 +134,10 @@ public class LoadingView extends View {
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        mWidth = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
-        mHeight = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        mWidth = w;
+        mHeight = h;
         setShader();
         resetPoint();
         initTimer();

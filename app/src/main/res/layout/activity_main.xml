@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:lv="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:background="#000">
 
     <me.wangyuwei.loadingview.LoadingView
         android:id="@+id/loading_view"
         android:layout_width="match_parent"
-        android:layout_height="350dp"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lly_external" />
 
     <!--<me.wangyuwei.loadingview.LoadingView-->
-        <!--android:id="@+id/loading_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="350dp"-->
-        <!--lv:lv_duration="10"-->
-        <!--lv:lv_start_color="#688fdb"-->
-        <!--lv:lv_end_color="#fff"-->
-        <!--lv:lv_internal_radius="5dp"-->
-        <!--lv:lv_external_radius="92dp"/>-->
+    <!--android:id="@+id/loading_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="350dp"-->
+    <!--lv:lv_duration="10"-->
+    <!--lv:lv_start_color="#688fdb"-->
+    <!--lv:lv_end_color="#fff"-->
+    <!--lv:lv_internal_radius="5dp"-->
+    <!--lv:lv_external_radius="92dp"/>-->
 
     <LinearLayout
+        android:id="@+id/lly_external"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_above="@+id/lly_internal"
         android:gravity="center">
 
         <TextView
@@ -47,8 +46,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lly_internal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/lly_rapid"
         android:layout_marginTop="10dp"
         android:gravity="center">
 
@@ -71,9 +72,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lly_rapid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center">
 
         <TextView
@@ -94,4 +98,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
