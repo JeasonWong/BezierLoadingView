@@ -1,6 +1,5 @@
 package me.wangyuwei.loadingview;
 
-import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -325,9 +324,7 @@ public class LoadingView extends View {
         }
         mAnimators.clear();
 
-        TypeEvaluator evaluator = new LinearEvaluator();
-
-        ValueAnimator circleGetSmallerAnimator = ValueAnimator.ofObject(evaluator, getMaxInternalRadius(), getMinInternalRadius());
+        ValueAnimator circleGetSmallerAnimator = ValueAnimator.ofFloat(getMaxInternalRadius(), getMinInternalRadius());
         circleGetSmallerAnimator.setDuration(5000L);
         circleGetSmallerAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -337,7 +334,7 @@ public class LoadingView extends View {
         });
         mAnimators.add(circleGetSmallerAnimator);
 
-        ValueAnimator circleGetBiggerAnimator = ValueAnimator.ofObject(evaluator, getMinInternalRadius(), getMaxInternalRadius());
+        ValueAnimator circleGetBiggerAnimator = ValueAnimator.ofFloat(getMinInternalRadius(), getMaxInternalRadius());
         circleGetBiggerAnimator.setDuration(5000L);
         circleGetBiggerAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -380,11 +377,11 @@ public class LoadingView extends View {
 
     /**
      * 创建圆点
-     * <p>
+     * <p/>
      * 圆点坐标：(x0,y0)
      * 半径：r
      * 角度：a0
-     * <p>
+     * <p/>
      * 则圆上任一点为：（x1,y1）
      * x1 = x0 + r * cos(ao * 3.14 /180 )
      * y1 = y0 + r * sin(ao * 3.14 /180 )
