@@ -22,21 +22,9 @@ A cool loading view with Bezier and a smooth circular motion，
 
 ## Import
 
-Step 1. Add it in your project's build.gradle at the end of repositories:
-
-```gradle
-repositories {
-    maven {
-        url 'https://dl.bintray.com/wangyuwei/maven'
-    }
-}
-```
-
-Step 2. Add the dependency:
-
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:LoadingiVew:1.0.3'
+  compile 'me.wangyuwei:LoadingiVew:1.0.5'
 }
 ```
 
