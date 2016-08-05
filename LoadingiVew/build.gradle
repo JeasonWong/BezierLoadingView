@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.wangyuwei' // Change this to match your package name
-version = '1.0.3' // Change this to match your version number
+version = '1.0.5' // Change this to match your version number
 
 android {
     compileSdkVersion 23
@@ -62,7 +62,7 @@ bintray {
         desc = "A cool loading view with Bezier and a smooth circular motion， "
 
         version {
-            name = '1.0.3'
+            name = '1.0.5'
             desc = 'A cool loading view with Bezier and a smooth circular motion， '
             vcsTag = 'android, loadfing, view'
         }

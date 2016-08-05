@@ -139,7 +139,6 @@ public class LoadingView extends View {
         mHeight = h;
         setShader();
         resetPoint();
-        initTimer();
     }
 
     /**
@@ -154,19 +153,29 @@ public class LoadingView extends View {
     /**
      * 启动定时器
      */
-    private void initTimer() {
-        mTimer = Observable.interval(mDuration, TimeUnit.MILLISECONDS)
-                .subscribe(new Action1<Long>() {
-                    @Override
-                    public void call(Long aLong) {
-                        dealTimerBusiness();
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
+    public void start() {
+        if (mTimer == null || mTimer.isUnsubscribed()) {
+            mTimer = Observable.interval(mDuration, TimeUnit.MILLISECONDS)
+                    .subscribe(new Action1<Long>() {
+                        @Override
+                        public void call(Long aLong) {
+                            dealTimerBusiness();
+                        }
+                    }, new Action1<Throwable>() {
+                        @Override
+                        public void call(Throwable throwable) {
 
-                    }
-                });
+                        }
+                    });
+        }
+        this.setVisibility(VISIBLE);
+    }
+
+    public void stop() {
+        if (mTimer != null) {
+            mTimer.unsubscribe();
+        }
+        this.setVisibility(GONE);
     }
 
     /**
@@ -466,12 +475,10 @@ public class LoadingView extends View {
      * @param progress
      */
     public void setDuration(int progress) {
-        if (mTimer != null) {
-            mTimer.unsubscribe();
-        }
+        stop();
         int duration = (int) ((1 - progress / 100f) * MAX_DURATION);
         mDuration = duration < MIN_DURATION ? MIN_DURATION : duration;
-        initTimer();
+        start();
     }
 
     /**

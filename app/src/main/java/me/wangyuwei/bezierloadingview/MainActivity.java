@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         mSbExternalR.setOnSeekBarChangeListener(this);
         mSbInternalR.setOnSeekBarChangeListener(this);
         mSbRate.setOnSeekBarChangeListener(this);
+
+        mLoadingView.start();
     }
 
     @Override
@@ -45,5 +47,11 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mLoadingView.stop();
     }
 }
